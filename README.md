@@ -3,7 +3,7 @@
 Install a package:
 
 ```
-brew tap rs/tap
+brew tap ysicing/tap
 brew install <package>
 ```
 
