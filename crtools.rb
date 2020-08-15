@@ -1,16 +1,16 @@
 class Crtools < Formula
     desc "Devops tools 运维工具"
     homepage "https://github.com/ysicing/crtools"
-    version "0.0.2"
+    version "0.0.3"
     bottle :unneeded
 
     if OS.mac?
       url "https://github.com/ysicing/crtools/releases/download/#{version}/crtools_darwin_amd64"
-      sha256 "2820277581479312a1d2dae5fde2fc422905bca870e0475e717a0f6bfe56e120"
+      sha256 "ab6fc1f34079b7b4db83cfcdcac715395cf9df123decf67bc54ef99bba5c9eb8"
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/crtools/releases/download/#{version}/crtools_linux_amd64"
-        sha256 "94d13c0b73749b4cd8a4df65d405ffbd3d84bd106c27a108b70fd11c8ff40e99"
+        sha256 "2306adc4523a6e3e9cd347790e2782ca928a0f4524d8d6ee7e514106796797fa"
       end
     end
 
