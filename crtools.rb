@@ -6,11 +6,11 @@ class Crtools < Formula
 
     if OS.mac?
       url "https://github.com/ysicing/crtools/releases/download/#{version}/crtools_darwin_amd64"
-      sha256 "a4205365dcd7686ac96ff00c4969837c8335ee6846f87f78af5c899fc54894f0"
+      sha256 "c0f139959e10720f9e4afa42ed6b6a90fd1c542e58a5fb1108e697a9eb2fcdf1"
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/crtools/releases/download/#{version}/crtools_linux_amd64"
-        sha256 "97251a3453b510e9f48c3c4147c84e98effd1f45a9609a1b2b87a4ddbf13a00f"
+        sha256 "a305161b552cb4d5e71c780cb9990fc632845cd87080ffef2cd3aa03e4c73163"
       end
     end
 
