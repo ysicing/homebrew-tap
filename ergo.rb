@@ -1,16 +1,16 @@
 class Ergo < Formula
     desc "Devops tools 运维工具"
     homepage "https://github.com/ysicing/ergo"
-    version "1.0.0-alpha02"
+    version "1.0.0-alpha03"
     bottle :unneeded
 
     if OS.mac?
       url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_amd64"
-      sha256 "166a46dbba3a09e9e975fbc4787b62478fff8d32d931dfc5d287739452b5b995"
+      sha256 "0e944c6862656b511e6340a017dfe0d4d0d4c25bcc1cfda64f17b6c44348874f"
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_amd64"
-        sha256 "94516dbadf29fd384f3252c6d9882fb42301c942ff2e7c046689318152e32808"
+        sha256 "04f54df0ebb56af77692d4cf61594ba87913496bde355091cdaf1fca2b43fcf3"
       end
     end
 
