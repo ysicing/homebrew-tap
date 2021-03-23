@@ -1,20 +1,29 @@
 class Ergo < Formula
     desc "Devops tools 运维工具"
     homepage "https://github.com/ysicing/ergo"
-    version "1.0.13"
+    version "1.0.15"
     bottle :unneeded
 
     if OS.mac?
-      url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_amd64"
-      sha256 "d4d09b1d8ecbcb87b95efe615df65997d7d286ea76ab627f8629a5a19e6d5568"
+      if Hardware::CPU.arm?
+        url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_arm64"
+        sha256 "c1dbbd0e2e8c17fe76b8c92bdaaf9dba1b4b0f36d68748cc2a4bf24aab659d48"
+      else
+        url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_amd64"
+        sha256 "da3605cacf176832881177bccc84e273d3f15d2bbb9c66b39dd8e041a7ed43a6"
+      end  
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_amd64"
-        sha256 "b3084e9474d3db00708e1d608b1bfc44e369a760440de1183230865e1d4b88cb"
+        sha256 "6e71d3dea2a59f6c4763677ad0b88ecee89b7ec73c3eac1d01d903bb3f26a737"
       end
     end
 
     def install
-      bin.install "ergo_darwin_amd64" => "ergo"
+      if Hardware::CPU.intel?
+        bin.install "ergo_darwin_amd64" => "ergo"
+      else
+        bin.install "ergo_darwin_arm64" => "ergo"
+      end 
     end
   end
