@@ -2,7 +2,6 @@ class Ysssh < Formula
     desc "Devops tools 运维工具 ysssh"
     homepage "https://github.com/ysicing/ssh"
     version "0.0.4"
-    bottle :unneeded
 
     if OS.mac?
       url "https://github.com/ysicing/ssh/releases/download/#{version}/ssh_darwin_amd64"

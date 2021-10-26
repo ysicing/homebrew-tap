@@ -2,7 +2,6 @@ class Crtools < Formula
     desc "Devops tools 运维工具"
     homepage "https://github.com/ysicing/crtools"
     version "0.1.0"
-    bottle :unneeded
 
     if OS.mac?
       url "https://github.com/ysicing/crtools/releases/download/#{version}/crtools_darwin_amd64"

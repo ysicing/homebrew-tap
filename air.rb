@@ -3,7 +3,6 @@ class Air < Formula
     desc "Live reload for Go apps"
     homepage "https://github.com/cosmtrek/air"
     version "1.27.3"
-    bottle :unneeded
 
     if OS.mac?
       if Hardware::CPU.arm?
