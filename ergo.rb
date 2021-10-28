@@ -6,15 +6,15 @@ class Ergo < Formula
     if OS.mac?
       if Hardware::CPU.arm?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_arm64"
-        sha256 "71ac37c66c5e7953aa063829e8fb16d20992e066a29e1a9c42a5c3676ba162e5"
+        sha256 "9928e9fd049fb7443f61b567f5d2e12ac736c4b0137d83638a4fbb020e9d87ea"
       else
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_amd64"
-        sha256 "ee5c502514ba88a9f0ffec2c0709a70e74851825fab3427bc7c0886e8badd3fa"
+        sha256 "2f75ed8e0664d505f4f072e0a47b0d8576484418d52ddc399bba0545c47dc40c"
       end  
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_amd64"
-        sha256 "05a9ed2446d3d8bd830bcf5b26c59f5a77dbed258fa823bae716b01e00cb2f88"
+        sha256 "f75d94b1f3a17bcbc621aced083097de0dad39bf1c700d3a1183df96c4ad42f3"
       end
     end
 
