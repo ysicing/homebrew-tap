@@ -21,9 +21,9 @@ class Air < Formula
 
     def install
       if Hardware::CPU.intel?
-        bin.install "air_${version}_darwin_amd64" => "air"
+        bin.install "air_#{version}_darwin_amd64" => "air"
       else
-        bin.install "air_${version}_darwin_arm64" => "air"
+        bin.install "air_#{version}_darwin_arm64" => "air"
       end
     end
   end
