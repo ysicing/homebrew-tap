@@ -6,19 +6,19 @@ class Ergo < Formula
     if OS.mac?
       if Hardware::CPU.arm?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_arm64"
-        sha256 "b5ac218e3e139c0e3c425375a745ce1b4c23ea84df9be8ca5a0185cdaa244e89"
+        sha256 "8f6001b7da3d43b632e6855d6de625085b1d621a5b173368763019fc31648fee"
       else
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_amd64"
-        sha256 "cd93f8ab7bfdf4dee904d60501c487273cd3c58f938dce7d0a92ab1581bc34bb"
+        sha256 "e72a5293722bd3770846d96b82224a8b02061723ee7dc77f5d2f8b89c7593412"
       end  
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_amd64"
-        sha256 "82ab565be3b70a26dceade16bc69286fcdaaf34472951652c16188de3ba9bfa6"
+        sha256 "48f1158dccfa7af9e43b79d25858561a56db5ee06b772f102e5f1f76a15dcaa3"
       end
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_arm64"
-        sha256 "31513f2dfed48c23941d86a59b872896ec7a3aa36bd092358c481ea2ccbf67be"
+        sha256 "2ee82cd87f6f011e4b69eee8eb9e31c28a84e1049f263a1b16d0742ab504fff9"
       end
     end
 
