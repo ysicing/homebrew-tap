@@ -1,24 +1,24 @@
 class Ergo < Formula
     desc "Devops tools 运维工具Ergo"
     homepage "https://github.com/ysicing/ergo"
-    version "2.6.10"
+    version "2.6.11"
 
     on_macos do
       if Hardware::CPU.arm?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_arm64"
-        sha256 "29bc5856ccfb01152b391aeb9f3c39ad375d800893bdeb9e31531cee3c1340e3"
+        sha256 "f09dea846a5dcd30bb9fa395e92b983e868d8e4ee31bce67a23659183873631f"
       else
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_amd64"
-        sha256 "bc4e0088bdaa64002c71249b7cf06b4d1ca54680ff3c2c93f1a0d430e3ad4866"
+        sha256 "93bc918d1ca0b367de39480f903f37f342e24153c60c2bc9f684fe80e18dd691"
       end  
     on_linux do
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_amd64"
-        sha256 "8568e379ed3d54224f1d95974c81bbe6715b2215b97459cd54a6f662cf2a556c"
+        sha256 "add0ac4f4d2930cd1b7509ebe92bf3f5ab0aa943426c7364bd830e6b67f86452"
       end
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_arm64"
-        sha256 "b5afb1f4b4795abe743ad9a9e243421617bdc0ecb420556c28289f8a29c30eed"
+        sha256 "284f9c81d432169bb3a7b239c59db172e39e2c72b2fb8d061dbb7cd6049d88c4"
       end
     end
 
@@ -37,4 +37,13 @@ class Ergo < Formula
           bin.install "ergo_linux_arm64" => "ergo"
         end 
       end
-  end
+
+      # Install bash completion
+      output = Utils.popen_read("#{bin}/ergo completion bash")
+      (bash_completion/"ergo").write output
+
+      # Install zsh completion
+      output = Utils.popen_read("#{bin}/ergo completion zsh")
+      (zsh_completion/"_ergo").write output
+    end
+end
