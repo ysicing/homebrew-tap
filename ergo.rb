@@ -1,24 +1,24 @@
 class Ergo < Formula
     desc "Devops tools 运维工具Ergo"
     homepage "https://github.com/ysicing/ergo"
-    version "2.8.0"
+    version "2.9.0"
 
     if OS.mac?
       if Hardware::CPU.arm?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_arm64"
-        sha256 "b91e08dd46297c3e0da7fd25b9bba04614f60fd0015fc46df1a18c5652000039"
+        sha256 "39abda449c4f5057b7000f811b9791037b116c33d27a2656ea70bf878b76e13a"
       else
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_darwin_amd64"
-        sha256 "c81263e1e810bda2efda1d94fb8e1425cd77ba4db52e234e97742297f741f2ce"
+        sha256 "c76e66c6e80d20bc75770e4f668acfb16458c6b8d0a6b488d8a111cb9ed5316c"
       end  
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_amd64"
-        sha256 "92dd75adcd917152e6b11c073f632ebf903a38ddad72a8d519ec8669c7531cb9"
+        sha256 "97b901be4a131b2048bfb7ed7f237044961a1d19636ab2117e51ccaba8f2abd0"
       end
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
         url "https://github.com/ysicing/ergo/releases/download/#{version}/ergo_linux_arm64"
-        sha256 "5ebc1f506f9c1b82bf9ab8fed1e115a6fcc0d56164e0e8b1800346c6cd6c6619"
+        sha256 "57dac38c7edac8ab3af5200b19eb94e306988446ae42e557d83fb1b7636f1bfb"
       end
     end
 
