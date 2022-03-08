@@ -1,24 +1,24 @@
 class Kr < Formula
     desc "Devops tools kube-resource"
     homepage "https://github.com/ysicing/kube-resource"
-    version "0.0.2"
+    version "0.0.4"
 
     if OS.mac?
       if Hardware::CPU.arm?
         url "https://github.com/ysicing/kube-resource/releases/download/#{version}/kr_darwin_arm64"
-        sha256 "ed5864352511b24e078922d4e11d144eea3131dccd05be572bfe13736966ccb1"
+        sha256 "77a0cfd48630e84caeaa766c5c1cfd07b83a0a59ae61c034540d448b6a0117b2"
       else
         url "https://github.com/ysicing/kube-resource/releases/download/#{version}/kr_darwin_amd64"
-        sha256 "9838814838787908850ef0e1574e1e3bb45bb643aa62dcd7b6db98424de5452e"
+        sha256 "9cc90d71f0bc95d8df7884f38e2028f131e8b7a711ce08e028979fa28382d80e"
       end  
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/kube-resource/releases/download/#{version}/kr_linux_amd64"
-        sha256 "9a5448402ee063ee9767fc16c4e55a1a3670263c8db48602d9bba3bbbe7792c0"
+        sha256 "2d145211fa3792f443c7e55e7c301d293d8183c2ffc6063bb419c081a162e1a5"
       end
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
         url "https://github.com/ysicing/kube-resource/releases/download/#{version}/kr_linux_arm64"
-        sha256 "92a9c1dd55b5ca4a992d7170a9f1db802b23b4ea288d1a5bd6ce256801c22c86"
+        sha256 "501cf99501271da9f7d706e46f974600da7279989999a6e326ba04ce6e2f0fe3"
       end
     end
 
