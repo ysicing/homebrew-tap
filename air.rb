@@ -2,20 +2,20 @@
 class Air < Formula
     desc "Live reload for Go apps"
     homepage "https://github.com/cosmtrek/air"
-    version "1.29.0"
+    version "1.40.4"
 
     if OS.mac?
       if Hardware::CPU.arm?
         url "https://github.com/cosmtrek/air/releases/download/v#{version}/air_#{version}_darwin_arm64"
-        sha256 "a8fc95ec2674e4fa07b6144da6ca90f884cf0f69ddcc52a0200a7694c7101222"
+        sha256 "e8db89533845f9efb7c0d9f3f98c60decf9fdd909cc2fbe9161fedb7d5d9a25c"
       else
         url "https://github.com/cosmtrek/air/releases/download/v#{version}/air_#{version}_darwin_amd64"
-        sha256 "9288509879e69335425c03a44ee0f80ead313394cb477553a915a230b15c4f06"
+        sha256 "48d17c3c0d52a29d8d2bc6c5c53ce86e3375dd2aeb5fc5ff01cb8be0019f0f4a"
       end
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/cosmtrek/air/releases/download/v#{version}/air_#{version}_linux_amd64"
-        sha256 "1210a1996e9ddab2242cec779122f7aa8375613b5c5db3dfa369f35bff0efe56"
+        sha256 "9920c80b517d9cf8f6eada7793ac5bcfc1db5dca1fbc4cc875df76c49daaef09"
       end
     end
 
