@@ -1,4 +1,4 @@
-class TiGA < Formula
+class Tiga < Formula
     desc "Simple and powerful tool for sernior restart engineer"
     homepage "https://github.com/ysicing/tiga"
     version "0.0.5"
