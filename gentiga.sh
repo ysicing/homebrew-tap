@@ -2,6 +2,8 @@
 
 set -e
 
+[ -d /tmp/tiga ] && rm -rf /tmp/tiga || true
+
 git clone https://github.com/ysicing/tiga.git /tmp/tiga
 
 cd /root/homebrew-tap
