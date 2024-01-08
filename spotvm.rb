@@ -1,24 +1,24 @@
 class Spotvm < Formula
     desc "spot vm tool"
     homepage "https://github.com/ysicing/spot"
-    version "0.1.0"
+    version "0.3.0"
 
     if OS.mac?
       if Hardware::CPU.arm?
         url "https://github.com/ysicing/spot/releases/download/v#{version}/spot_darwin_arm64"
-        sha256 "a0ceeface781fe8f03de85eb17d772d91413cc857b51be6784e479f818325a0d"
+        sha256 "9923e9af28a982b279148df090433c668d080b1bac48325389ea542c5ed5bd8c"
       else
         url "https://github.com/ysicing/spot/releases/download/v#{version}/spot_darwin_amd64"
-        sha256 "80be07468298a20495c8fd56b201a879ffb114f7400f5575a46b63621bbad344"
+        sha256 "8912347bcb1cb7743e142b95be7062eb39f722c8cf3e43cfc690ae57e5846b63"
       end
     elsif OS.linux?
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/spot/releases/download/v#{version}/spot_linux_amd64"
-        sha256 "8fae725cda1e83ddad167e87cc5d13430fdc31c438bce9ea38b25e50f725fde9"
+        sha256 "9fb58128d639311938632b30a58c639d4008afabc836b18c243e2f86f5702b81"
       end
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
         url "https://github.com/ysicing/spot/releases/download/v#{version}/spot_linux_arm64"
-        sha256 "077aeeb9501a6e480e8702a689b3fef2cccceadbe84118ce5831e453eee086c9"
+        sha256 "cf69ddddf9839b80e684196cb25211544cae507533b06a174d370e845d1417e4"
       end
     end
 
