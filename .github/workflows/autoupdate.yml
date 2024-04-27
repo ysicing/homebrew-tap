@@ -1,0 +1,36 @@
+name: Update
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  push:
+    branches:
+    - master
+
+permissions: write-all
+
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+      - run: ./bottiga.sh
+      - uses: peter-evans/create-pull-request@v6
+        id: cpr
+        with:
+          title: 'update tiga'
+          commit-message: |
+            🤖 update tiga using rebot.
+          delete-branch: true
+
+      - name: Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: rebase
