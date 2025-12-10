@@ -20,7 +20,7 @@ jobs:
           ref: master
           fetch-depth: 0
       - run: ./bottiga.sh
-      - uses: peter-evans/create-pull-request@v7
+      - uses: peter-evans/create-pull-request@v8
         id: cpr
         with:
           title: 'update tiga'
