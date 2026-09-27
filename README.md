@@ -1,16 +1,15 @@
 ## ysicing Homebrew Tap
 
-Install a package:
+Install XStats:
 
 ```
 brew tap ysicing/tap
-brew install <package>
+brew trust ysicing/tap
+brew install --cask xstats
 ```
 
 #### Available packages
 
-Package|Description
----|---
-[ergo](https://github.com/ysicing/ergo)|devops tool运维工具
-[kr](https://github.com/ysicing/kube-resource)|k8s插件
-[crtools](https://github.com/ysicing/crtools)|crtools 阿里云镜像仓库工具
+Package | Type | Description
+--- | --- | ---
+[xstats](https://github.com/ysicing/xstats) | Cask | macOS menu bar system monitor
