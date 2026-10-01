@@ -1,6 +1,6 @@
 cask "xstats" do
-  version "0.14.2"
-  sha256 "51cb058d6efd1888d83a38172179836cfe82104b81bf7e8e4989466b06ab3360"
+  version "0.14.3"
+  sha256 "f047a7d5bd496a01fd58ad4a2ede19277b06ef41bab7e99c431807bb0e8796fb"
 
   url "https://c.ysicing.net/oss/apps/macOS/XStats/XStats-#{version}-AppleSilicon.dmg"
   name "XStats"
