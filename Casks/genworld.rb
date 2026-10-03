@@ -1,6 +1,6 @@
 cask "genworld" do
-  version "1.0.1"
-  sha256 "755f257c59d1e1b6774b73d82511e0fcffb65a34ebe78e2f7b6a36ab0317ada9"
+  version "1.1.0"
+  sha256 "378c52f052da4dc78bedb6e039d1583f190683fab5663205e6bbe880d5465694"
 
   url "https://c.ysicing.net/oss/apps/macOS/GenWorld/GenWorld-#{version}-AppleSilicon.dmg"
   name "GenWorld"
