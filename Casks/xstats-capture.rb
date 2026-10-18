@@ -1,6 +1,6 @@
 cask "xstats-capture" do
-  version "0.1.1"
-  sha256 "d91bb702d18e91273413ac801b4d27c4596bd0cac333d0dcda1fc8f637278bc1"
+  version "0.1.2"
+  sha256 "644a36f92fc7f621cd4aecdb8f101407ff321157bd761d14b01f8e46e86b2d2b"
 
   url "https://c.ysicing.net/oss/apps/macOS/XStats/capture/XStats-Capture-#{version}-AppleSilicon.dmg"
   name "XStats Capture"
