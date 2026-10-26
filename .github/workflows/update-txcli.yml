@@ -1,0 +1,85 @@
+name: Update txcli
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - Formula/txcli.rb
+      - .github/scripts/*txcli.py
+      - .github/workflows/update-txcli.yml
+  pull_request:
+    paths:
+      - Formula/txcli.rb
+      - .github/scripts/*txcli.py
+      - .github/workflows/update-txcli.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-txcli-${{ github.event_name }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Test release synchronization
+        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'
+      - name: Check formula syntax
+        run: ruby -c Formula/txcli.rb
+
+  install-test:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    needs: validate
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install and test formula
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+          HOMEBREW_NO_INSTALL_CLEANUP: "1"
+          HOMEBREW_MAKE_JOBS: "2"
+        run: |
+          brew tap ysicing/tap "$GITHUB_WORKSPACE"
+          if brew help trust >/dev/null 2>&1; then
+            brew trust --tap ysicing/tap
+          fi
+          brew install --formula ysicing/tap/txcli
+          brew test ysicing/tap/txcli
+
+  update:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: publish-txcli-formula
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: master
+      - name: Synchronize latest stable release
+        env:
+          GIT_TERMINAL_PROMPT: "0"
+        run: python3 .github/scripts/update_txcli.py
+      - name: Check generated formula
+        run: ruby -c Formula/txcli.rb
+      - name: Publish formula update
+        run: |
+          git add Formula/txcli.rb
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          version=$(sed -n 's/^  version "\(.*\)"/\1/p' Formula/txcli.rb)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "chore(txcli): 同步 ${version}"
+          git push origin HEAD:master
