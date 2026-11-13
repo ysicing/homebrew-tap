@@ -1,9 +1,9 @@
 cask "xsourcetree" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.0.9"
-  sha256 arm:   "39c9f07556b0b106653cfccd98511d1612772421cbfe059e3babca105a3e2f25",
-         intel: "d6e07a649abf8c793cebcfc222d95daec2eddae696c8a92f2ecec20149996f4f"
+  version "0.0.10"
+  sha256 arm:   "0203910829dced5196518ed3ed6952e595c222b85d2beef33806e8a12dda78b0",
+         intel: "eaa1e8d8442aa5cf4191fe791ebb24437ba587f4e63ce3720b9a8f74a52d6f41"
 
   url "https://c.ysicing.net/oss/apps/macOS/XSourceTree/xsourcetree-#{version}-#{arch}.dmg"
   name "XSourceTree"
