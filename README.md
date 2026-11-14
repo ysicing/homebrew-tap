@@ -25,8 +25,12 @@ media cache and the separate XStats Network Monitor component are retained.
 Install the lightweight native Git client for macOS:
 
 ```sh
-brew install --cask ysicing/tap/xsourcetree
+brew install --cask ysicing/tap/51code
 ```
+
+The old `xsourcetree` token remains compatible through `cask_renames.json`.
+For an existing installation, run `brew update`; if a manual migration is needed,
+run `brew migrate --cask ysicing/tap/51code`.
 
 ### txcli
 
@@ -48,5 +52,5 @@ Package | Type | Description
 --- | --- | ---
 [xstats](https://github.com/ysicing/xstats) | Cask | macOS menu bar system monitor
 [xstats-capture](https://github.com/ysicing/XStats) | Cask | Standalone screenshot annotation and screen recording
-[xsourcetree](#51code) | Cask | 51Code native Git client for macOS
+[51code](#51code) | Cask | 51Code native Git client for macOS
 [txcli](https://cnb.cool/ysicing/txcli) | Formula | Tencent Cloud CLI for Lighthouse, DNSPod, EdgeOne and storage

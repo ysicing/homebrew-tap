@@ -1,4 +1,4 @@
-cask "xsourcetree" do
+cask "51code" do
   arch arm: "arm64", intel: "amd64"
 
   version "0.1.0"
