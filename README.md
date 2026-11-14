@@ -20,7 +20,7 @@ Uninstall requests a normal quit and removes the selected app. Add `--zap` to re
 its listed private settings and data. The shared `~/Library/Caches/XStatsCapture`
 media cache and the separate XStats Network Monitor component are retained.
 
-### XSourceTree
+### 51Code
 
 Install the lightweight native Git client for macOS:
 
@@ -48,5 +48,5 @@ Package | Type | Description
 --- | --- | ---
 [xstats](https://github.com/ysicing/xstats) | Cask | macOS menu bar system monitor
 [xstats-capture](https://github.com/ysicing/XStats) | Cask | Standalone screenshot annotation and screen recording
-[xsourcetree](#xsourcetree) | Cask | Lightweight native Git client for macOS
+[xsourcetree](#51code) | Cask | 51Code native Git client for macOS
 [txcli](https://cnb.cool/ysicing/txcli) | Formula | Tencent Cloud CLI for Lighthouse, DNSPod, EdgeOne and storage
