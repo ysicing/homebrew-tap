@@ -1,9 +1,9 @@
 cask "51code" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.3.3"
-  sha256 arm:   "fcecfa7f52965348593b8777e7ed51ca8cb126c3bbaa790780fc4c38cca26afa",
-         intel: "bde3eb5ba442422a8493dd34cc2612a2daa21816e1feaeeb61b390f859292671"
+  version "0.3.4"
+  sha256 arm:   "24611262b797438f61768d05f86e55c8f09b3e05e7d5f742732ece6361372a03",
+         intel: "3d9a3ea9d0a59b22e8d8ca51c7ee3738001cc94ac97a2cce1c4f157e6d71fddf"
 
   url "https://c.ysicing.net/oss/apps/macOS/51code/51code-#{version}-#{arch}.dmg"
   name "51Code"
